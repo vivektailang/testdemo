@@ -4,7 +4,7 @@ pool:
   vmImage: Ubuntu-latest
 stages:
   - stage: Build
-    displayName: Build Angular Application
+    displayName: Build Angular Application QA
     jobs:
       - job: BuildApp
         displayName: Build Angular Project
