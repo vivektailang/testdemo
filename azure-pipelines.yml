@@ -19,7 +19,7 @@ stages:
     - script: |
         npm install -g @angular/cli
         npm install
-        ng build --prod
+        ng build # For Angular CLI v13+; use --prod for older versions
       displayName: Build Angular Application
 
     - task: PublishBuildArtifacts@1
@@ -42,7 +42,7 @@ stages:
     - task: CopyFilesOverSSH@0
       inputs:
         sshEndpoint: 'vivektailang' # Replace with your VM connection
-        sourceFolder: '$(Pipeline.Workspace)/testdemo'
+        sourceFolder: '$(Pipeline.Workspace)/testdemo/browser' # Ensure path aligns with build artifacts
         targetFolder: '/var/www/html' # Adjust to your web server's target folder
       displayName: Copy Files to VM
 
@@ -50,5 +50,5 @@ stages:
       inputs:
         sshEndpoint: 'vivektailang'
         script: |
-          sudo systemctl restart apache2 # Example command to restart web server
+          sudo systemctl restart apache2 # Adjust based on your web server
       displayName: Restart Web Server
