@@ -36,7 +36,7 @@ stages:
     displayName: Deploy to QA Environment
     environment: 'qa' # Reference your environment
     steps:
-    - script: echo "Starting deployment to QA environment..."
+    - script: echo "Starting deployment to QA environment......"
       displayName: Print Start Message
 
     - task: CopyFilesOverSSH@0
