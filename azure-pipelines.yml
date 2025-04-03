@@ -1,21 +1,54 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
-- main
+- main # Adjust the branch name according to your repository
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'Ubuntu-latest' # Use an appropriate image for your Angular build
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '20.x'
-  displayName: 'Install Node.js'
+stages:
+- stage: Build
+  displayName: Build Angular Application
+  jobs:
+  - job: BuildApp
+    displayName: Build Angular Project
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '16.x' # Use Node.js version compatible with your Angular setup
+      displayName: Install Node.js
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    - script: |
+        npm install -g @angular/cli
+        npm install
+        ng build --prod
+      displayName: Build Angular Application
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: 'dist/testdemo/browser' # Replace with your Angular project's dist folder
+        artifactName: 'testdemo'
+        publishLocation: 'Container'
+      displayName: Publish Build Artifacts
+
+- stage: Deploy
+  displayName: Deploy Angular Application to QA
+  jobs:
+  - job: DeployToQA
+    displayName: Deploy to QA Environment
+    environment: 'qa' # Reference your environment
+    steps:
+    - script: echo "Starting deployment to QA environment..."
+      displayName: Print Start Message
+
+    - task: CopyFilesOverSSH@0
+      inputs:
+        sshEndpoint: 'vivektailang' # Replace with your VM connection
+        sourceFolder: '$(Pipeline.Workspace)/testdemo'
+        targetFolder: '/var/www/html' # Adjust to your web server's target folder
+      displayName: Copy Files to VM
+
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'vivektailang'
+        script: |
+          sudo systemctl restart apache2 # Example command to restart web server
+      displayName: Restart Web Server
