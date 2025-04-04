@@ -4,7 +4,7 @@ pool:
   vmImage: Ubuntu-latest
 stages:
   - stage: Build
-    displayName: Build Angular Application QA Start
+    displayName: Build Angular Application
     jobs:
       - job: BuildApp
         displayName: Build Angular Project
@@ -29,7 +29,7 @@ stages:
     jobs:
       - job: DeployToQA
         displayName: Deploy to QA Environment
-        environment: 'qa'
+        environment: qa
         steps:
           - script: echo "Starting deployment to QA environment..."
             displayName: Print Start Message
