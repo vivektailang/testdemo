@@ -47,7 +47,7 @@
   <header>
     <nav>
       <ul>
-        <li><a class="current" routerLink="/home">Home</a></li>
+        <li><a routerLink="/home">Home</a></li>
         <li><a routerLink="/about">About Us</a></li>
         <li><a routerLink="/mission">Mission & Vision</a></li>
         <li><a routerLink="/gallery">Gallery</a></li>
@@ -58,8 +58,7 @@
     </nav>
   </header>
   <main>
-    <h1>Welcome to Our Website</h1>
-    <p>This is the home page.</p>
+    <router-outlet></router-outlet>
   </main>
   <footer>
     <p>&copy; 2025 Your Company. All rights reserved.</p>
