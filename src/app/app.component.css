@@ -2,6 +2,8 @@
 .container {
   width: 80%;
   margin: auto;
+  padding-left: 15px; /* Add padding to the left */
+  padding-right: 15px; /* Add padding to the right */
 }
 
 /* Styles for mobile devices */
@@ -26,3 +28,36 @@
     flex: 1;
   }
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+  .social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+    .social-links a:hover {
+      color: #ddd;
+    }
