@@ -1,0 +1,28 @@
+/* Default styles for larger screens */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 600px) {
+  .flex-item {
+    flex: 1;
+  }
+}
