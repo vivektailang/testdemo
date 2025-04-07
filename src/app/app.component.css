@@ -61,3 +61,33 @@ footer {
     .social-links a:hover {
       color: #ddd;
     }
+
+.quick-links {
+  margin-top: 1rem;
+}
+
+  .quick-links h3 {
+    margin-bottom: 10px;
+  }
+
+  .quick-links ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .quick-links li {
+    margin-bottom: 10px;
+  }
+
+  .quick-links a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+
+    .quick-links a:hover {
+      color: #0056b3;
+    }
