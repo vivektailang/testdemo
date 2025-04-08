@@ -1,8 +1,76 @@
 <section id="home">
   <div class="container">
-    <h2>Home</h2>
-    <p>We are dedicated to providing the best maths coaching to help students excel in their studies. Our experienced teachers use innovative teaching methods to make learning maths easy and enjoyable.</p>
-    <p>Our mission is to build a strong foundation in mathematics for our students, enabling them to achieve academic success and develop critical thinking skills.</p>
-    <p>Join us to experience a unique and effective approach to learning maths!</p>
+    <section id="posts">
+      <h2>Latest Notifications</h2>
+      <div class="post-container">
+        <div class="post-item" *ngFor="let post of posts">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.date | date: 'longDate' }}</p>
+          <p>{{ post.content }}</p>
+        </div>
+      </div>
+    </section>
+    <!-- Summary Section -->
+    <section id="summary">
+      <h2>Welcome to Poorwa Tutorials</h2>
+      <p>We are dedicated to providing the best maths coaching to help students excel in their studies. Our experienced teachers use innovative teaching methods to make learning maths easy and enjoyable.</p>
+      <p>Our mission is to build a strong foundation in mathematics for our students, enabling them to achieve academic success and develop critical thinking skills.</p>
+      <p>Join us to experience a unique and effective approach to learning maths!</p>
+    </section>
+    <section id="toppers">
+      <h2>Our Toppers Year 2024 and 2025</h2>
+      <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of items">
+        <img [src]="item.image" alt="Image" />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
+    </div>
+    </section>
+    <!-- Latest Results Section -->
+    <section id="latest-results">
+      <h2>Latest Results</h2>
+      <div class="row">
+        <div class="column">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 1">
+        </div>
+        <div class="column">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h1>Year 2025</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Messages Section -->
+    <section id="important-messages">
+      <h2>Important Messages</h2>
+      <ul>
+        <li>Dear Students, as we approach the annual examination period, focus on your studies with dedication and determination.</li>
+        <li>New batch starting from next week. Enroll now!</li>
+        <li>Congratulations to all our students for their excellent results!</li>
+      </ul>
+    </section>
+    <!-- Quick Links Section -->
+    <section id="quick-links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/mission">Mission & Vision</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/journey">Our Journey</a></li>
+        <li><a href="/messages">Messages</a></li>
+      </ul>
+    </section>
   </div>
 </section>
