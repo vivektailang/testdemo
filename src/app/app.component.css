@@ -4,6 +4,7 @@
   margin: auto;
   padding-left: 0px; /* Add padding to the left */
   padding-right: 0px; /* Add padding to the right */
+  align-content: center;
 }
 
 /* Styles for mobile devices */

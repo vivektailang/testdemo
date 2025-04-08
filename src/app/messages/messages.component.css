@@ -1,53 +1,56 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 12px; /* Add padding to provide space between columns */
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
+.messages-container {
+  padding: 20px;
   background-color: #f9f9f9;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+  gap: 20px; /* Add spacing between rows and columns */
 }
 
-tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Responsive styles */
 @media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
+  .messages-container {
+    grid-template-columns: 1fr; /* Switch to 1 column on smaller screens */
   }
-
-    thead tr {
-      display: none;
-    }
-
-  tr {
-    margin-bottom: 1rem;
-  }
-
-  td {
-    text-align: left;
-    padding-left: 50%;
-    position: relative;
-  }
-
-    td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 0;
-      width: 50%;
-      padding-left: 15px;
-      font-weight: bold;
-      text-align: left;
-    }
 }
+
+.message {
+  border: 1px solid #ccc; /* Light border for the box */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Space inside the box */
+  background-color: #fff; /* White background for the box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  height: 200px; /* Fixed height for the box */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+
+  .message:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+  .pagination button {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+    .pagination button.active {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .pagination button:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }

@@ -1,23 +1,18 @@
 <section id="messages">
-  <div class="container">
-    <h2>Messages</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Summary</th>
-          <th>Details</th>
-          <th>Created By</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let message of messages">
-          <td data-label="Date">{{ message.date | date:'short' }}</td>
-          <td data-label="Summary">{{ message.summary }}</td>
-          <td data-label="Details">{{ message.details }}</td>
-          <td data-label="Created By">{{ message.createdBy }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <h2>Messages</h2>
+  <div class="messages-container">
+    <div class="message" *ngFor="let message of paginatedMessages">
+      <h3 class="message-heading">{{ message.heading }}</h3>
+      <p class="message-description">{{ message.description }}</p>
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button *ngFor="let page of [].constructor(totalPages); let i = index"
+            (click)="goToPage(i + 1)"
+            [class.active]="currentPage === i + 1">
+      {{ i + 1 }}
+    </button>
   </div>
 </section>

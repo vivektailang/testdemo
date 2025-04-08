@@ -1,20 +1,18 @@
-<section id="messages">
+<section id="journey">
   <div class="container">
     <h2>Journey</h2>
-    
-      <div class="timeline">
-        <div class="event">
-          <div class="year">2025</div>
-          <div class="description">Started Angular development and explored routing concepts.</div>
-        </div>
-        <div class="event">
-          <div class="year">2024</div>
-          <div class="description">Organized a well-planned trip to Hong Kong Disneyland.</div>
-        </div>
-        <div class="event">
-          <div class="year">2023</div>
-          <div class="description">Refined academic content and explored GitHub Copilot for coding efficiency.</div>
+    <div class="timeline">
+      <div class="year-box" *ngFor="let yearData of journeyData">
+        <h3 class="year">{{ yearData.year }}</h3>
+        <div class="event" *ngFor="let event of yearData.events">
+          <div class="date-heading">
+            <p class="date">{{ event.date }}</p>
+            <hr class="separator" />
+            <h4 class="heading">{{ event.heading }}</h4>
+          </div>
+          <p class="description">{{ event.description }}</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
