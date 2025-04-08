@@ -62,32 +62,29 @@ footer {
       color: #ddd;
     }
 
-.quick-links {
-  margin-top: 1rem;
+.quick-links ul {
+  display: flex; /* Arrange links in a single row */
+  justify-content: center; /* Center the links horizontally */
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0;
+  margin: 0;
 }
 
-  .quick-links h3 {
-    margin-bottom: 10px;
+.quick-links li {
+  margin: 0 10px; /* Add spacing between links */
+}
+
+  .quick-links li:not(:last-child)::after {
+    content: "|"; /* Add a separator between links */
+    margin-left: 10px; /* Add spacing after the separator */
   }
 
-  .quick-links ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    list-style-type: none;
-    padding-left: 0;
-  }
+.quick-links a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
 
-  .quick-links li {
-    margin-bottom: 10px;
+  .quick-links a:hover {
+    color: #0056b3;
   }
-
-  .quick-links a {
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s ease;
-  }
-
-    .quick-links a:hover {
-      color: #0056b3;
-    }

@@ -1,0 +1,9 @@
+section {
+  margin-left: 20px;
+  margin-right: 20px;
+  background: linear-gradient(135deg, #ffffff, #d3d3d3); /* White to light grey gradient */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 0px; /* Optional: Add rounded corners */
+  color: #333; /* Ensure text is readable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}

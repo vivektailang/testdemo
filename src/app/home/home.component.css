@@ -2,12 +2,17 @@
 .container {
   width: 80%;
   margin: auto;
-  padding: 20px;
 }
 
 /* Section styles */
 section {
-  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: linear-gradient(135deg, #ffffff, #d3d3d3); /* White to light grey gradient */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 0px; /* Optional: Add rounded corners */
+  color: #333; /* Ensure text is readable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
 h2 {
@@ -55,37 +60,6 @@ p {
   flex-wrap: wrap;
 }
 
-.chart {
-  width: 45%;
-  margin-bottom: 20px;
-}
-
-  .chart canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-/* Quick Links Section */
-#quick-links ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#quick-links li {
-  margin-bottom: 10px;
-}
-
-#quick-links a {
-  text-decoration: none;
-  color: #007bff;
-  transition: color 0.3s ease;
-}
-
-  #quick-links a:hover {
-    color: #0056b3;
-  }
-
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -118,7 +92,7 @@ p {
   }
 
 #posts {
-  margin: 20px 0;
+  margin: 2px 0;
 }
 
 .post-container {
@@ -136,10 +110,31 @@ p {
 
   .post-item h3 {
     margin: 0 0 10px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
   }
 
   .post-item p {
     margin: 5px 0;
     color: #555;
+    font-size: 0.9rem;
   }
+
+/* Style for the notification header (title and date) */
+.post-header {
+  font-size: 0.9rem; /* Small font size */
+  font-weight: bold; /* Remove bold styling */
+  margin: 0; /* Remove extra margin */
+  color: #333; /* Optional: Adjust color for better readability */
+}
+
+/* Style for the date */
+.post-date {
+  font-style: italic; /* Optional: Differentiate the date with italic */
+}
+
+/* Style for the notification content */
+.post-content {
+  font-size: 0.8rem; /* Smaller font size for content */
+  margin: 0.5rem 0; /* Add spacing between content and next notification */
+  color: #555; /* Optional: Adjust color for better readability */
+}

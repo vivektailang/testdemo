@@ -1,3 +1,4 @@
-<h2>Mission & Vision</h2>
-<p>Our mission is to provide high-quality education in mathematics and foster a love for the subject in our students. We aim to develop their problem-solving skills and critical thinking abilities.</p>
-<p>Our vision is to be recognized as the leading maths coaching institute, empowering students to achieve academic excellence and success in their future endeavors.</p>
+<section *ngIf="mission">
+  <h2>{{ mission.title }}</h2>
+  <p *ngFor="let paragraph of mission.paragraphs">{{ paragraph }}</p>
+</section>
