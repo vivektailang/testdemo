@@ -1,9 +1,9 @@
 /* Default styles for larger screens */
 .container {
-  width: 80%;
+  width: 100%;
   margin: auto;
-  padding-left: 15px; /* Add padding to the left */
-  padding-right: 15px; /* Add padding to the right */
+  padding-left: 0px; /* Add padding to the left */
+  padding-right: 0px; /* Add padding to the right */
 }
 
 /* Styles for mobile devices */

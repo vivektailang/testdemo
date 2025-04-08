@@ -1,5 +1,15 @@
 <section id="home">
   <div class="container">
+    <section id="posts">
+      <h2>Latest Notifications</h2>
+      <div class="post-container">
+        <div class="post-item" *ngFor="let post of posts">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.date | date: 'longDate' }}</p>
+          <p>{{ post.content }}</p>
+        </div>
+      </div>
+    </section>
     <!-- Summary Section -->
     <section id="summary">
       <h2>Welcome to Poorwa Tutorials</h2>
@@ -7,21 +17,35 @@
       <p>Our mission is to build a strong foundation in mathematics for our students, enabling them to achieve academic success and develop critical thinking skills.</p>
       <p>Join us to experience a unique and effective approach to learning maths!</p>
     </section>
-
+    <section id="toppers">
+      <h2>Our Toppers Year 2024 and 2025</h2>
+      <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of items">
+        <img [src]="item.image" alt="Image" />
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
+    </div>
+    </section>
     <!-- Latest Results Section -->
     <section id="latest-results">
       <h2>Latest Results</h2>
       <div class="row">
         <div class="column">
-          <img src="assets/img/latest-results1.jpg" alt="Latest Results 1">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 1">
         </div>
         <div class="column">
-          <img src="assets/img/latest-results2.jpg" alt="Latest Results 2">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 2">
         </div>
       </div>
       <div class="row">
         <div class="column">
-          <img src="assets/img/latest-results3.jpg" alt="Latest Results 3">
+          <h1>Year 2025</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="img/PT_latest_Result_2025.jpeg" alt="Latest Results 3">
         </div>
       </div>
     </section>
