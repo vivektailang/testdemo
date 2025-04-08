@@ -12,7 +12,7 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 80px;
   position: relative; /* Position the timeline for the vertical line */
 }
 
@@ -20,8 +20,8 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 20px; /* Adjust to align with the year boxes */
-    width: 100px; /* Increased thickness of the line */
+    left: 80px; /* Adjust to align with the year boxes */
+    width: 20px; /* Increased thickness of the line */
     height: 100%; /* Full height of the timeline */
     background-color: #ff0000; /* Light gray color for the line */
     z-index: 0; /* Ensure the line is behind the year boxes */
